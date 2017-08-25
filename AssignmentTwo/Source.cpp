@@ -10,29 +10,42 @@
 #include "Templates.h"
 using namespace std;
 
-void TestArrFunctions();
+void Test();
 
 int main() {
-	TestArrFunctions();
+	Test();
 
 	return 0;
 }
 
-void TestArrFunctions() {
-	int arrOfInts[]{ 0, 4, 5, -3, 7 };
-	double arrOfDoubles[]{ 0.23, 4.5, -3.2, 7.9 };
+void Test() { //testing all the functions
 	vector <int> hej{ 2, 3, 4, 5, 6 };
 	vector <int> hej2{ 2,5,7,9,65 };
 	vector <int> addedVectors;
 	double a = 1.2;
 	double b = 1.0;
 	double sum, maxSum;
+	vector <int> returnedElement, combinedVector;
+
 	sum = add(a, b);
-	cout << sum;
+	cout << sum << endl;
+	cin.get();
 
 	ArraySumOne(&hej, 5);
+	cin.get();
 
-	add(hej, hej2);
+	returnedElement = MaxOne(&hej2, 5);
+	cout << returnedElement.at(0) << endl;
+	cin.get();
+
+	combinedVector = add(hej, hej2);
+	for (int i = 0; i < combinedVector.size(); i++) {
+		cout << combinedVector.at(i) << endl;
+	}
+	cin.get();
+
+	int arrOfInts[]{ 0, 4, 5, -3, 7 };
+	double arrOfDoubles[]{ 0.23, 4.5, -3.2, 7.9 };
 
 	int(&ref)[5] = arrOfInts;
 	double(&ref1)[4] = arrOfDoubles;

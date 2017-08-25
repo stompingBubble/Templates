@@ -64,10 +64,10 @@ Te3 MaxOne(Te3 *pArr, int arrSize) {
 	return largestElement;
 }
 
-//explicit specialization for const char * and vector <int>
+//explicit specializations for const char * and vector <int>
 
 template <> std::vector <int> ArraySumOne<std::vector<int>>(std::vector <int> *x, int size);
 template <> std::vector <int> MaxOne<std::vector <int>>(std::vector <int> *x, int size);
 
-
-
+template <> const char* ArraySumOne <const char*>(const char *x[], int size);
+template <> const char* MaxOne<const char*>(const char *x[], int size);
