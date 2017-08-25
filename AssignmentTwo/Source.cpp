@@ -21,14 +21,21 @@ int main() {
 void TestArrFunctions() {
 	int arrOfInts[]{ 0, 4, 5, -3, 7 };
 	double arrOfDoubles[]{ 0.23, 4.5, -3.2, 7.9 };
-	vector <int> hej;
+	vector <int> hej{ 2, 3, 4, 5, 6 };
+	vector <int> hej2{ 2,5,7,9,65 };
+	vector <int> addedVectors;
+	double a = 1.2;
+	double b = 1.0;
+	double sum, maxSum;
+	sum = add(a, b);
+	cout << sum;
 
-	hej.push_back(1);
+	ArraySumOne(&hej, 5);
+
+	add(hej, hej2);
 
 	int(&ref)[5] = arrOfInts;
 	double(&ref1)[4] = arrOfDoubles;
-
-	double sum, maxSum;
 
 	sum = ArraySum(ref);
 	cout << sum;

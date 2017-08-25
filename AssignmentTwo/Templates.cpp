@@ -2,23 +2,40 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <algorithm> 
 
 using namespace std;
 
+
 template <> const char * add<const char *>(const char *x, const char *y) {
-	cout << "const char * passed" << endl;
+	cout << "ERROR const char * passed" << endl;
+	
 	return " ";
 }
 
 
 template <> vector<int> add<vector<int>>(vector <int> x, vector <int> y) {
-	vector <int> addedVectors;
+	vector <int> returnValue;
 
-	x.insert(x.end(), y.begin(), y.end());
-	return addedVectors;
+	returnValue.insert(returnValue.end(), x.begin(), x.end());
+	returnValue.insert(returnValue.end(), y.begin(), y.end());
+	for (int i = 0; i < returnValue.size(); i++) {
+		cout << returnValue.at(i) << endl;
+	}
+	
+	return returnValue;
 }
 
-/*template <> const char * ArraySum<const char*>(const char *x) {
-	cout << "const char* passed, pass an array";
-	return " ";
-}*/
+template <> vector<int> ArraySumOne<std::vector<int>>(std::vector <int> *x, int size) { 
+	vector <int>vec{0};
+
+	cout << "ERROR vector<int> passed, pass an array" << endl;
+	return vec;
+}
+
+template <> std::vector <int> MaxOne<std::vector <int>>(std::vector <int> *x, int size) {
+	vector <int>vec{ 0 };
+
+	cout << "ERROR" << endl;
+	return vec;
+}

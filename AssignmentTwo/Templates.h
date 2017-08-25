@@ -7,6 +7,7 @@ T add(T x, T y) {
 	return x + y;
 }
 
+
 template <typename T2, int size>
 
 T2 ArraySum(T2(&pArr)[size]) {
@@ -36,7 +37,6 @@ T3 Max(T3(&pArr)[size]) {
 template <> const char * add<const char*>(const char *x, const char *y);
 
 template <> std::vector<int> add<std::vector<int>>(std::vector <int> x, std::vector <int> y);
-//ok this function could either add all the numbers in the vectors or add them to one single vector, i just went with the second
 
 
 //following is the functions from assignment one with no changes 
@@ -66,6 +66,8 @@ Te3 MaxOne(Te3 *pArr, int arrSize) {
 
 //explicit specialization for const char * and vector <int>
 
-//template <> const char * ArraySumOne<const char *>(const char *pCharArray, int size);
-//template <> vector <int> ArraySumOne<vector<int>>(vector <int> x, int size);
+template <> std::vector <int> ArraySumOne<std::vector<int>>(std::vector <int> *x, int size);
+template <> std::vector <int> MaxOne<std::vector <int>>(std::vector <int> *x, int size);
+
+
 
