@@ -21,24 +21,28 @@ int main() {
 void Test() { //testing all the functions
 	vector <int> hej{ 2, 3, 4, 5, 6 };
 	vector <int> hej2{ 2,5,7,9,65 };
-	vector <int> addedVectors;
-	double a = 1.2;
-	double b = 1.0;
+	double a = 1.2, b = 1.0;
 	double sum, maxSum;
 	vector <int> returnedElement, combinedVector;
+	
+	const char *test = "TEXT";
 
-	sum = add(a, b);
+	ArraySumOne(&test, 10); //test passing const char 
+	cout << endl;
+	cin.get();
+
+	sum = add(a, b); //passing doubles
 	cout << sum << endl;
 	cin.get();
 
-	ArraySumOne(&hej, 5);
-	cin.get();
-
-	returnedElement = MaxOne(&hej2, 5);
+	returnedElement = MaxOne(&hej2, 5); //passing int vector
 	cout << returnedElement.at(0) << endl;
 	cin.get();
 
-	combinedVector = add(hej, hej2);
+	ArraySumOne(&hej, 5); //passing int vector
+	cin.get();
+
+	combinedVector = add(hej, hej2); //passing two int vectors
 	for (int i = 0; i < combinedVector.size(); i++) {
 		cout << combinedVector.at(i) << endl;
 	}
@@ -50,11 +54,11 @@ void Test() { //testing all the functions
 	int(&ref)[5] = arrOfInts;
 	double(&ref1)[4] = arrOfDoubles;
 
-	sum = ArraySum(ref);
+	sum = ArraySum(ref); //passing ints
 	cout << sum;
 	cin.get();
 
-	sum = ArraySum(ref1);
+	sum = ArraySum(ref1); //doubles
 	cout << sum;
 	cin.get();
 
