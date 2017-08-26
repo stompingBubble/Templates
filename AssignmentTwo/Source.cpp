@@ -3,7 +3,7 @@
 // 2. create specialization of the function templates created in assignment 1.
 //specialized for const char* & std::vector<int>
 
-//3. defina the specialized functions in a .h-file and include it in multiple sourse files, observe what happens. 
+//3. define the specialized functions in a .h-file and include it in multiple sourse files, observe what happens. 
 
 #include <String>
 #include <iostream>
