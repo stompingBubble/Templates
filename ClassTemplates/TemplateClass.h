@@ -7,22 +7,16 @@ class Stack {
 	int m_Top{ -1 };
 
 public:
-	//copy constructor
+	//default constructor
 	Stack() = default;
-	Stack(const Stack &obj) {
-		m_Top = obj.m_Top;
-		for (int i = 0; i <= m_Top; i++) {
-			m_Buffer[i] = obj.m_Buffer[i];
-		}
-	}
+	//copy constructor
+	Stack(const Stack &obj);
 
 	void Push(const T &elem);
 
 	void Pop();
 
-	const T& Top() const {
-		return m_Buffer[m_Top];
-	}
+	const T& Top() const;
 
 	bool IsEmpty();
 
@@ -31,14 +25,20 @@ public:
 };
 
 //implementations
+
 template <typename T, int size>
 
-void Stack<T, size>::Push(const T &elem) {
+void Stack<T, size>::Push(const T &elem) { //push element to stack
 	m_Buffer[++m_Top] = elem;
 }
-template <typename T, int size>
+template <typename T, int size> //pop element from stack
 void Stack<T, size>::Pop() {
 	--m_Top;
+}
+
+template <typename T, int size>
+const T& Stack<T, size>::Top() const {
+	return m_Buffer[m_Top];
 }
 
 template <typename T, int size>
@@ -48,6 +48,16 @@ bool Stack<T, size>::IsEmpty() {
 }
 
 template <typename T, int size>
+
 Stack<T, size> Stack<T, size>::Create() {
 	return Stack<T, size>();
+}
+
+template <typename T, int size>
+
+Stack<T, size>::Stack(const Stack<T, size> &obj){
+	m_Top = obj.m_Top;
+	for (int i = 0; i <= m_Top; i++) {
+		m_Buffer[i] = obj.m_Buffer[i];
+	}
 }
